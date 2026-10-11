@@ -1,90 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jose Umbao Jr | Portfolio</title>
-<style>
-:root{--bg:#0b1020;--panel:#111a2e;--card:#151f36;--text:#eef3ff;--muted:#a8b4cc;--accent:#70e1c1;--line:#283653;--danger:#ff7385}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,Segoe UI,Arial,sans-serif}a{color:inherit;text-decoration:none}.wrap{max-width:1120px;margin:auto;padding:0 24px}.nav{position:sticky;top:0;z-index:5;background:#0b1020ed;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}.navinner{display:flex;justify-content:space-between;align-items:center;min-height:72px;gap:18px}.brand{font-weight:800;letter-spacing:.2px}.brand span{color:var(--accent)}.links{display:flex;gap:22px;align-items:center;flex-wrap:wrap}.links a{color:var(--muted);font-size:14px}.links a:hover{color:var(--accent)}.btn{border:0;border-radius:10px;padding:11px 16px;font-weight:700;cursor:pointer;background:var(--accent);color:#07151a}.btn.secondary{background:transparent;border:1px solid var(--line);color:var(--text)}.btn.danger{background:var(--danger);color:#24050a}.hero{padding:86px 0 70px;display:grid;grid-template-columns:1.5fr .8fr;gap:50px;align-items:center}.eyebrow{color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:2px;font-size:12px}.hero h1{font-size:clamp(38px,6vw,66px);line-height:1.06;letter-spacing:-2px;margin:14px 0 20px}.hero h1 span{color:var(--accent)}.hero p{color:var(--muted);max-width:650px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.profilebox{border:1px solid var(--line);background:linear-gradient(145deg,#162542,#10182a);padding:30px;border-radius:24px}.avatar{height:110px;width:110px;border-radius:24px;background:var(--accent);color:#06121a;display:grid;place-items:center;font-size:35px;font-weight:900;margin-bottom:22px;overflow:hidden}.avatar img{width:100%;height:100%;object-fit:cover}.profilebox h3{margin:0}.profilebox p{font-size:14px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:25px}.stat{background:#0b1325;padding:13px;border-radius:12px}.stat strong{display:block;color:var(--accent);font-size:22px}.stat small{color:var(--muted)}section{padding:60px 0;border-top:1px solid #18243a}.sectionhead{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:26px}.sectionhead h2{font-size:30px;line-height:1.2;margin:6px 0}.sectionhead p{color:var(--muted);margin:0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:var(--card);border:1px solid var(--line);padding:22px;border-radius:18px}.card h3{margin:8px 0}.card p{color:var(--muted);font-size:14px}.tag{display:inline-block;padding:5px 9px;border-radius:999px;border:1px solid #35504e;color:var(--accent);font-size:11px;font-weight:800;letter-spacing:.3px}.date{font-size:12px;color:var(--accent);font-weight:700}.skilllist{display:flex;gap:10px;flex-wrap:wrap}.skill{padding:10px 14px;background:var(--card);border:1px solid var(--line);border-radius:10px;color:var(--muted)}.timeline{border-left:2px solid var(--line);padding-left:24px;display:grid;gap:20px}.timeline .card{position:relative}.timeline .card:before{content:"";position:absolute;width:10px;height:10px;background:var(--accent);border-radius:50%;left:-31px;top:27px}.contact{display:grid;grid-template-columns:1fr 1fr;gap:24px}.contactbox{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}.contactbox p{color:var(--muted)}footer{padding:28px 0;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}.hidden{display:none!important}
-.admin{min-height:100vh;padding:30px 0}.adminhead{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:22px}.adminlayout{display:grid;grid-template-columns:220px 1fr;gap:18px}.sidebar,.adminpanel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px}.sidebtn{display:block;width:100%;text-align:left;background:transparent;border:0;color:var(--muted);padding:12px;border-radius:9px;cursor:pointer}.sidebtn.active,.sidebtn:hover{background:#20304c;color:var(--accent)}.adminpanel h2{margin-top:0}.adminrow{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line)}.adminrow:last-child{border-bottom:0}.adminrow small{display:block;color:var(--muted)}.rowactions{display:flex;gap:7px;flex-shrink:0}.tiny{padding:7px 10px;font-size:12px}.field{display:grid;gap:6px;margin:13px 0}.field label{font-size:13px;color:var(--muted)}input,textarea,select{width:100%;padding:11px 12px;background:#0b1325;color:var(--text);border:1px solid var(--line);border-radius:9px;font:inherit}textarea{min-height:100px;resize:vertical}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.notice{color:var(--muted);font-size:13px}.loginbox{max-width:440px;margin:70px auto;background:var(--panel);border:1px solid var(--line);padding:28px;border-radius:18px}.toast{position:fixed;right:20px;bottom:20px;background:var(--accent);color:#06121a;padding:12px 18px;border-radius:10px;font-weight:800;z-index:10}
-.timeline .card p,.timeline .card h3{white-space:pre-line}
-@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:55px}.grid{grid-template-columns:1fr 1fr}.adminlayout{grid-template-columns:1fr}.sidebar{display:flex;gap:6px;overflow:auto}.sidebtn{white-space:nowrap;width:auto}.links{gap:12px}.links a:nth-child(4){display:none}}@media(max-width:560px){.grid,.contact,.formgrid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.sectionhead{align-items:start;flex-direction:column}.hero h1{letter-spacing:-1px}.navinner{align-items:flex-start;padding-top:14px;padding-bottom:14px;flex-direction:column}.adminhead{align-items:flex-start;flex-direction:column}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio of Jose Umbao Jr., a Full Stack Application and Web Developer building useful, reliable digital experiences.">
+  <meta name="theme-color" content="#0a0f18">
+  <title>Jose Umbao Jr. | Full Stack Application and Web Developer</title>
+  <style>
+    :root{color-scheme:dark;--bg:#0a0f18;--surface:#111a26;--raised:#162230;--text:#eff5f4;--muted:#a3b2b7;--line:#283744;--accent:#72e0c0;--content:1120px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{margin:0;background:radial-gradient(ellipse at 85% 4%,#16352f52,transparent 34rem),var(--bg);color:var(--text);font:16px/1.7 Inter,"Segoe UI",Arial,sans-serif}
+    a{color:inherit;text-decoration:none}
+    a:focus-visible{outline:3px solid #ffca86;outline-offset:4px}
+    .wrap{width:min(var(--content),calc(100% - 48px));margin-inline:auto}
+    .skip{position:absolute;top:-60px;left:16px;z-index:20;padding:10px 14px;border-radius:8px;background:var(--accent);color:var(--bg);font-weight:700}
+    .skip:focus{top:12px}
+    .header{position:sticky;top:0;z-index:10;border-bottom:1px solid #283744b8;background:#0a0f18e8;backdrop-filter:blur(16px)}
+    .nav{display:flex;min-height:74px;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-size:15px;font-weight:800;letter-spacing:.09em}.brand span{color:var(--accent)}
+    .links{display:flex;flex-wrap:wrap;align-items:center;gap:22px}
+    .links a{color:var(--muted);font-size:13px}.links a:hover{color:var(--accent)}
+    .links .contact-nav{padding:7px 12px;border:1px solid #72e0c06b;border-radius:8px;color:var(--accent)}
+    .hero{padding-block:92px}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);align-items:center;gap:68px}
+    .kicker{display:inline-flex;align-items:center;gap:10px;color:var(--accent);font-size:12px;font-weight:750;letter-spacing:.15em;text-transform:uppercase}
+    .kicker:before{width:24px;height:1px;background:currentColor;content:""}
+    h1,h2,h3,p{margin-top:0}
+    h1{max-width:760px;margin-block:19px 20px;font-size:clamp(44px,7vw,76px);line-height:1.04;letter-spacing:-.055em}
+    h1 span{color:var(--accent)}
+    .hero-copy{max-width:650px;color:var(--muted);font-size:18px}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+    .button{display:inline-flex;min-height:46px;align-items:center;justify-content:center;gap:9px;padding:10px 16px;border:1px solid transparent;border-radius:9px;background:var(--accent);color:#071510;font-size:14px;font-weight:800;transition:transform .2s ease,background .2s ease}
+    .button:hover{transform:translateY(-2px);background:#a2f4d8}
+    .button.alt{border-color:var(--line);background:transparent;color:var(--text)}
+    .button.alt:hover{border-color:var(--accent);color:var(--accent)}
+    .button svg{width:16px;height:16px}
+    .identity{position:relative;padding:26px;overflow:hidden;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,#172631,#101721 76%);box-shadow:0 22px 70px #0003}
+    .identity:after{position:absolute;top:-72px;right:-76px;width:190px;height:190px;border:1px solid #72e0c035;border-radius:50%;box-shadow:0 0 0 24px #72e0c00a,0 0 0 48px #72e0c008;content:"";pointer-events:none}
+    .initials{display:grid;width:66px;height:66px;margin-bottom:24px;place-items:center;border:1px solid #72e0c06b;border-radius:16px;background:#72e0c015;color:var(--accent);font-size:22px;font-weight:800}
+    .identity h2{margin-bottom:3px;font-size:22px}.role{margin-bottom:18px;color:var(--accent);font-size:13px;font-weight:700}
+    .details{display:grid;gap:10px;margin:0;color:var(--muted);font-size:13px}.details div{display:flex;justify-content:space-between;gap:12px}.details dt{color:#7e939b}.details dd{margin:0;color:var(--text);text-align:right}
+    .available{display:inline-flex;align-items:center;gap:8px;margin-top:23px;color:var(--muted);font-size:12px}
+    .available:before{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px #72e0c0a6;content:""}
+    .section{padding-block:74px;border-top:1px solid #2837448c}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:30px}
+    .section-head h2{margin:8px 0 0;font-size:clamp(29px,4vw,40px);line-height:1.2;letter-spacing:-.04em}
+    .section-head>p{max-width:420px;margin:0;color:var(--muted);font-size:14px}
+    .about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px}
+    .panel{padding:27px;border:1px solid var(--line);border-radius:15px;background:linear-gradient(145deg,#131e2a,#101721)}
+    .panel p:last-child{margin-bottom:0}.about-copy{color:var(--muted)}.about-copy strong{color:var(--text);font-weight:650}
+    .focus{display:grid;gap:15px;margin:0;padding:0;list-style:none}
+    .focus li{display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start}
+    .focus-icon{display:grid;width:26px;height:26px;place-items:center;border-radius:7px;background:#72e0c016;color:var(--accent);font-size:12px;font-weight:800}
+    .focus strong{display:block;font-size:14px}.focus span:last-child{display:block;color:var(--muted);font-size:12px}
+    .achievement-grid,.project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .achievement,.project{min-height:220px;padding:23px;border:1px solid var(--line);border-radius:14px;background:var(--surface);transition:transform .2s ease,border-color .2s ease,background .2s ease}
+    .achievement:hover,.project:hover{transform:translateY(-4px);border-color:#72e0c080;background:var(--raised)}
+    .card-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:27px}
+    .symbol{display:grid;width:36px;height:36px;place-items:center;border:1px solid #72e0c047;border-radius:10px;color:var(--accent);font-size:14px;font-weight:800}
+    .label{color:#7e939b;font-size:10px;font-weight:750;letter-spacing:.1em;text-transform:uppercase}
+    .achievement h3,.project h3{margin-bottom:9px;font-size:17px;line-height:1.4}
+    .achievement p,.project p{margin-bottom:0;color:var(--muted);font-size:13px}
+    .note{margin:18px 0 0;color:#84969b;font-size:12px}
+    .project{display:flex;min-height:280px;flex-direction:column}.project-bottom{margin-top:auto;padding-top:24px}
+    .chips{display:flex;flex-wrap:wrap;gap:7px;margin:16px 0 0;padding:0;list-style:none}
+    .chips li{padding:4px 8px;border:1px solid #344550;border-radius:999px;color:#bed0d0;font-size:10px}
+    .skills{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+    .skill{padding:19px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+    .skill h3{margin-bottom:13px;color:var(--accent);font-size:12px;letter-spacing:.04em;text-transform:uppercase}
+    .skill p{margin:0;color:var(--muted);font-size:13px}
+    .experience{display:grid;grid-template-columns:180px 1fr;gap:28px;padding:26px 0;border-bottom:1px solid var(--line)}
+    .experience:first-child{padding-top:0}.experience-date{color:var(--accent);font-size:12px;font-weight:700}
+    .experience h3{margin-bottom:4px;font-size:18px}.company{margin-bottom:10px;color:var(--muted);font-size:13px}
+    .responsibility-heading{margin:22px 0 13px;font-size:14px}
+    .responsibilities{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0;padding:0;list-style:none}
+    .responsibilities li{position:relative;padding:13px 14px 13px 34px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--muted);font-size:12px;line-height:1.6}
+    .responsibilities li:before{position:absolute;top:14px;left:14px;color:var(--accent);font-weight:800;content:"✓"}
+    .responsibilities strong{display:block;margin-bottom:4px;color:var(--text);font-size:12px}
+    .responsibilities span{display:block}
+    .contact-panel{display:flex;align-items:center;justify-content:space-between;gap:32px;padding:clamp(25px,5vw,48px);border:1px solid #72e0c04d;border-radius:18px;background:radial-gradient(ellipse at 95% 0%,#72e0c018,transparent 48%),var(--surface)}
+    .contact-panel h2{margin:8px 0 10px;font-size:clamp(28px,4vw,39px);line-height:1.2;letter-spacing:-.04em}
+    .contact-panel p{max-width:570px;margin-bottom:0;color:var(--muted);font-size:14px}
+    .contact-links{display:grid;flex:0 0 auto;gap:9px}.contact-links a{color:var(--accent);font-size:13px;font-weight:700}
+    .contact-links a:hover{color:#a2f4d8}
+    footer{padding-block:25px;border-top:1px solid #2837448c;color:#84969b;font-size:12px}
+    .footer-inner{display:flex;justify-content:space-between;gap:16px}
+    @media(max-width:850px){.hero-grid{grid-template-columns:minmax(0,1fr) minmax(230px,.8fr);gap:32px}.links{gap:14px}.achievement-grid,.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.skills{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:640px){.wrap{width:min(var(--content),calc(100% - 36px))}.nav{align-items:flex-start;flex-direction:column;gap:8px;padding-block:14px}.links{gap:10px 17px}.links a{font-size:12px}.links .contact-nav{padding:3px 8px}.hero{padding-block:62px}.hero-grid,.about-grid{grid-template-columns:1fr}.hero-grid{gap:30px}h1{font-size:clamp(43px,12vw,62px)}.hero-copy{font-size:16px}.section{padding-block:56px}.section-head{align-items:flex-start;flex-direction:column;gap:12px}.achievement-grid,.project-grid,.responsibilities{grid-template-columns:1fr}.achievement{min-height:auto}.project{min-height:245px}.experience{grid-template-columns:1fr;gap:6px}.contact-panel{align-items:flex-start;flex-direction:column}.contact-links{gap:7px}.footer-inner{flex-direction:column;gap:3px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important}}
+  </style>
 </head>
 <body>
-<div id="portfolio">
-<header class="nav"><div class="wrap navinner"><a class="brand" href="#home"><!-- DEV<span>PORTFOLIO</span> --></a><nav class="links"><a href="#about">About</a><a href="#achievements">Achievements</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#contact">Contact</a><button class="btn secondary tiny" onclick="showLogin()">Admin</button></nav></div></header>
-<main>
-<section id="home" style="border-top:0"><div class="wrap hero"><div><div class="eyebrow">Application Developer Associate</div><h1>Building useful digital solutions <span>that work.</span></h1><p id="heroSummary">I develop and maintain web applications, streamline business processes, and turn requirements into reliable, user-friendly systems.</p><div class="actions"><a class="btn" href="#projects">Explore my work</a><a class="btn secondary" href="#contact">Get in touch</a></div></div><aside class="profilebox"><div class="avatar" id="avatar">AD</div><h3 id="profileName">Your Name</h3><p id="profileRole">Application Developer Associate</p><p id="profileLocation">Philippines</p><div class="stats"><div class="stat"><strong id="statProjects">0</strong><small>Projects</small></div><div class="stat"><strong id="statAchievements">0</strong><small>Achievements</small></div><div class="stat"><strong id="statSkills">0</strong><small>Skills</small></div></div></aside></div></section>
-<section id="about"><div class="wrap"><div class="sectionhead"><div><div class="eyebrow">Introduction</div><h2>About me</h2></div></div><div class="card"><p id="aboutText"></p></div></div></section>
-<section id="achievements"><div class="wrap"><div class="sectionhead"><div><div class="eyebrow">Impact & growth</div><h2>Achievements</h2><!-- <p>Selected accomplishments, improvements, and milestones.</p> --></div></div><div id="achievementList" class="grid"></div></div></section>
-<section id="projects"><div class="wrap"><div class="sectionhead"><div><div class="eyebrow">Selected work</div><h2>Projects</h2><!-- <p>Applications and solutions developed or supported.</p> --></div></div><div id="projectList" class="grid"></div></div></section>
-<section id="skills"><div class="wrap"><div class="sectionhead"><div><div class="eyebrow">Technical toolkit</div><h2>Skills</h2></div></div><div id="skillList" class="skilllist"></div></div></section>
-<section id="experience"><div class="wrap"><div class="sectionhead"><div><div class="eyebrow">Professional journey</div><h2>Experience</h2></div></div><div id="experienceList" class="timeline"></div></div></section>
-<section id="contact"><div class="wrap"><div class="sectionhead"><div><div class="eyebrow">Let's connect</div><h2>Contact</h2></div></div><div class="contact"><div class="contactbox"><h3>Have a project or opportunity?</h3><p>Reach out to discuss application development, process improvement, or technical support opportunities.</p></div><div class="contactbox"><p><strong>Email</strong><br><a id="emailLink" href="mailto:your.email@example.com">your.email@example.com</a></p><p><strong>LinkedIn</strong><br><a id="linkedinLink" href="#">Add your LinkedIn URL in Admin</a></p><p><strong>GitHub / Portfolio</strong><br><a id="githubLink" href="#">Add your GitHub URL in Admin</a></p></div></div></div></section>
-</main><footer><div class="wrap">© <span id="year"></span> <span id="footerName">Your Name</span> · Application Developer Associate Portfolio</div></footer>
-</div>
-<div id="admin" class="hidden"><div class="wrap admin"><div id="loginView" class="loginbox"><div class="eyebrow">Restricted area</div><h2>Portfolio Admin</h2><p class="notice"></p><div class="field"><label>Username</label><input id="loginUser" value="" autocomplete="username"></div><div class="field"><label>Password</label><input id="loginPass" type="password" value="" autocomplete="current-password"></div><button class="btn" onclick="login()">Sign in</button> <button class="btn secondary" onclick="backToSite()">Back to portfolio</button><p class="notice"></p></div>
-<div id="dashboard" class="hidden"><div class="adminhead"><div><div class="eyebrow">Content management</div><h1 style="margin:4px 0">Portfolio Admin</h1><p class="notice">Create, edit, and delete portfolio content. Changes are saved in this browser.</p></div><div><button class="btn secondary" onclick="backToSite()">View site</button> <button class="btn secondary" onclick="logout()">Log out</button></div></div>
-<div class="adminlayout"><aside class="sidebar" id="sideNav"></aside><div class="adminpanel" id="adminContent"></div></div></div></div></div>
-<div id="toast" class="toast hidden"></div>
-<script>
-const KEY='associatePortfolioDataV1';
-const defaults={
- profile:{name:'Your Name',role:'Application Developer Associate',location:'Philippines',summary:'I develop and maintain web applications, streamline business processes, and turn requirements into reliable, user-friendly systems.',about:'I am an Application Developer passionate about developing, maintaining, and improving software applications that support business operations and enhance productivity. I have experience in web application development, database management, system integration, and technical troubleshooting using technologies such as PHP, Laravel, Vue.js, JavaScript, C#, and SQL. I enjoy solving technical problems, learning new technologies, and creating efficient, reliable, and user-friendly applications. I am committed to continuous learning, improving my development skills, and delivering solutions that meet business requirements while maintaining application quality and performance. My goal is to grow as a software developer by expanding my technical expertise, exploring new technologies, and contributing to innovative solutions that create value for both users and the organization.',email:'your.email@example.com',linkedin:'',github:''},
- achievements:[
- {title:'Improved Application Reliability',date:'Achievement · Example',description:'Supported troubleshooting and maintenance activities to help keep business applications stable and dependable.',category:'Application Support'},
- {title:'Delivered Workflow Enhancements',date:'Achievement · Example',description:'Implemented user-requested improvements to reduce repetitive work and make common tasks easier to complete.',category:'Process Improvement'},
- {title:'Strengthened Technical Skills',date:'Achievement · Example',description:'Continued learning in web development, database operations, debugging, and application lifecycle practices.',category:'Professional Growth'}],
- projects:[
- {title:'Business Portal',date:'Web Application',description:'A centralized portal for business users to view records, submit information, and manage routine workflows.',tags:'Laravel, Vue, Inertia, MySQL',link:''},
- {title:'Operational Data Dashboard',date:'Internal Tool',description:'A data-focused interface designed to improve visibility into operational records and simplify follow-up actions.',tags:'PHP, SQL, JavaScript',link:''},
- {title:'Portfolio Content Manager',date:'Personal Project',description:'A responsive portfolio website with a simple admin interface for managing profile details and work highlights.',tags:'HTML, CSS, JavaScript',link:''}],
- skills:['Laravel','PHP','Vue.js','JavaScript','MySQL','REST APIs','HTML & CSS','Git','Debugging','Technical Support'],
- experience:[
- {title:'Application Developer Associate',company:'Your Company',date:'Present',description:'Develop, maintain, and support business applications; investigate issues; implement approved enhancements; and collaborate with users and technical teams.'}]
-};
-let data=loadData(), currentType='profile', editIndex=null;
-function loadData(){try{const s=localStorage.getItem(KEY);return s?JSON.parse(s):structuredClone(defaults)}catch(e){return JSON.parse(JSON.stringify(defaults))}}
-function saveData(){localStorage.setItem(KEY,JSON.stringify(data));renderSite();toast('Changes saved successfully.')}
-function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function renderSite(){
-const p=data.profile;document.getElementById('heroSummary').textContent=p.summary;document.getElementById('profileName').textContent=p.name;document.getElementById('profileRole').textContent=p.role;document.getElementById('profileLocation').textContent=p.location;const avatar=document.getElementById('avatar');avatar.textContent=(p.name||'AD').split(/\s+/).slice(0,2).map(x=>x[0]||'').join('').toUpperCase();if(p.image){const img=document.createElement('img');img.src=p.image;img.alt=`${p.name||'Profile'} photo`;avatar.replaceChildren(img)}document.getElementById('aboutText').textContent=p.about;document.getElementById('footerName').textContent=p.name;document.getElementById('year').textContent=new Date().getFullYear();document.getElementById('statProjects').textContent=data.projects.length;document.getElementById('statAchievements').textContent=data.achievements.length;document.getElementById('statSkills').textContent=data.skills.length;
-document.getElementById('emailLink').textContent=p.email;document.getElementById('emailLink').href='mailto:'+p.email;setExternal('linkedinLink',p.linkedin,'Add your LinkedIn URL in Admin');setExternal('githubLink',p.github,'Add your GitHub URL in Admin');
-document.getElementById('achievementList').innerHTML=data.achievements.map(a=>`<article class="card"><span class="tag">${esc(a.category||'Achievement')}</span><p class="date">${esc(a.date)}</p><h3>${esc(a.title)}</h3><p>${esc(a.description)}</p></article>`).join('')||empty('No achievements added yet.');
-document.getElementById('projectList').innerHTML=data.projects.map(a=>`<article class="card"><span class="tag">${esc(a.date||'Project')}</span><h3>${esc(a.title)}</h3><p>${esc(a.description)}</p><p><strong>Stack:</strong> ${esc(a.tags||'Not specified')}</p>${a.link?`<a class="date" href="${esc(a.link)}" target="_blank" rel="noopener">View project ↗</a>`:''}</article>`).join('')||empty('No projects added yet.');
-document.getElementById('skillList').innerHTML=data.skills.map(s=>`<span class="skill">${esc(s)}</span>`).join('')||empty('No skills added yet.');
-document.getElementById('experienceList').innerHTML=data.experience.map(a=>`<article class="card"><p class="date">${esc(a.date)}</p><h3>${esc(a.title)}</h3><p><strong>${esc(a.company)}</strong></p><p class="responsibilities">${esc(a.description)}</p></article>`).join('')||empty('No experience added yet.');
-}
-function setExternal(id,url,label){const e=document.getElementById(id);e.textContent=url||label;e.href=url||'#';e.target=url?'_blank':'_self';e.rel='noopener'}
-function empty(t){return `<div class="card"><p>${esc(t)}</p></div>`}
-function showLogin(){document.getElementById('portfolio').classList.add('hidden');document.getElementById('admin').classList.remove('hidden');document.getElementById('loginView').classList.remove('hidden');document.getElementById('dashboard').classList.add('hidden');window.scrollTo(0,0)}
-function backToSite(){document.getElementById('admin').classList.add('hidden');document.getElementById('portfolio').classList.remove('hidden');window.scrollTo(0,0)}
-function login(){if(document.getElementById('loginUser').value==='joseumbao_admin'&&document.getElementById('loginPass').value==='W3akip0t@282931!!!'){document.getElementById('loginView').classList.add('hidden');document.getElementById('dashboard').classList.remove('hidden');renderAdmin();}else alert('Invalid credentials.')}
-function logout(){document.getElementById('loginPass').value='';showLogin()}
-function toast(t){const el=document.getElementById('toast');el.textContent=t;el.classList.remove('hidden');setTimeout(()=>el.classList.add('hidden'),2200)}
-const types={profile:{label:'Profile',singular:'Profile',fields:[['name','Full name'],['role','Professional title'],['location','Location'],['summary','Hero summary','textarea'],['about','About me','textarea'],['email','Email'],['linkedin','LinkedIn URL'],['github','GitHub URL']]},achievements:{label:'Achievements',singular:'Achievement',fields:[['title','Achievement title'],['category','Category'],['date','Date / timeframe'],['description','Description','textarea']]},projects:{label:'Projects',singular:'Project',fields:[['title','Project title'],['date','Project type / timeframe'],['description','Description','textarea'],['tags','Technologies (comma-separated)'],['link','Project URL']]},skills:{label:'Skills',singular:'Skill',fields:[['name','Skill name']]},experience:{label:'Experience',singular:'Experience',fields:[['title','Job title'],['company','Company'],['date','Date / timeframe'],['description','Responsibilities / impact','textarea']]}};
-function renderAdmin(){document.getElementById('sideNav').innerHTML=Object.keys(types).map(k=>`<button class="sidebtn ${k===currentType?'active':''}" onclick="selectType('${k}')">${types[k].label}</button>`).join('');renderEditor()}
-function selectType(t){currentType=t;editIndex=null;renderAdmin()}
-function renderEditor(){
-const t=types[currentType], root=document.getElementById('adminContent');
-if(currentType==='profile'){root.innerHTML=`<h2>Edit profile</h2><form id="editForm" onsubmit="submitItem(event)">${t.fields.map(f=>field(f,data.profile[f[0]])).join('')}<button class="btn" type="submit">Save profile</button></form><div class="field"><label for="profileImageInput">Profile photo</label><input id="profileImageInput" type="file" accept="image/*" onchange="uploadProfileImage(event)"><small class="notice">Choose an image up to 10 MB. It will be resized for your portfolio and saved in this browser.</small>${data.profile.image?'<button class="btn secondary tiny" type="button" onclick="removeProfileImage()">Remove profile photo</button>':''}</div><hr style="border-color:var(--line);margin:24px 0"><button class="btn secondary" onclick="exportData()">Export backup (JSON)</button> <button class="btn secondary" onclick="importDataPrompt()">Import backup (JSON)</button> <button class="btn danger" onclick="resetData()">Reset data</button><p class="notice">Content is stored in this browser's localStorage. Export a backup before clearing browser data.</p>`;return}
-root.innerHTML=`<div class="adminhead"><div><h2>${t.label}</h2><p class="notice">Manage items displayed on your public portfolio.</p></div><button class="btn" onclick="newItem()">+ Add ${t.singular}</button></div><div id="itemList">${listItems(currentType)}</div><div id="itemEditor"></div>`;
-}
-function field(f,val){let [key,label,type]=f;const v=val??'';return `<div class="field"><label for="f_${key}">${esc(label)}</label>${type==='textarea'?`<textarea id="f_${key}" name="${key}">${esc(v)}</textarea>`:`<input id="f_${key}" name="${key}" value="${esc(v)}" ${key==='link'||key==='linkedin'||key==='github'?'type="url"':'type="text"'}>`}</div>`}
-function listItems(t){const arr=data[t];if(!arr.length)return '<p class="notice">No items yet. Select “Add” to create one.</p>';return arr.map((item,i)=>{const title=t==='skills'?item:item.title;const sub=t==='skills'?'Skill':(item.category||item.company||item.date||'Portfolio item');return `<div class="adminrow"><div><strong>${esc(title)}</strong><small>${esc(sub)}</small></div><div class="rowactions"><button class="btn secondary tiny" onclick="editItem(${i})">Edit</button><button class="btn danger tiny" onclick="deleteItem(${i})">Delete</button></div></div>`}).join('')}
-function newItem(){editIndex=null;showItemForm({});}
-function editItem(i){editIndex=i;const t=currentType;showItemForm(t==='skills'?{name:data.skills[i]}:data[t][i])}
-function showItemForm(item){const t=types[currentType];document.getElementById('itemEditor').innerHTML=`<hr style="border-color:var(--line);margin:24px 0"><h3>${editIndex===null?'Add':'Edit'} ${t.singular}</h3><form onsubmit="submitItem(event)">${(currentType==='skills'?[['name','Skill name']]:t.fields).map(f=>field(f,item[f[0]])).join('')}<button class="btn" type="submit">Save item</button> <button class="btn secondary" type="button" onclick="document.getElementById('itemEditor').innerHTML=''">Cancel</button></form>`;document.getElementById('itemEditor').scrollIntoView({behavior:'smooth',block:'start'})}
-function submitItem(e){e.preventDefault();const form=e.target;const obj={};new FormData(form).forEach((v,k)=>obj[k]=String(v).trim());if(currentType==='profile'){data.profile={...data.profile,...obj};saveData();renderEditor();return}if(currentType==='skills'){const val=obj.name;if(!val)return alert('Please enter a skill name.');if(editIndex===null)data.skills.push(val);else data.skills[editIndex]=val;}else{if(!obj.title)return alert('Please enter a title.');if(editIndex===null)data[currentType].push(obj);else data[currentType][editIndex]=obj;}saveData();editIndex=null;renderEditor()}
-async function uploadProfileImage(event){const input=event.target,file=input.files[0];if(!file)return;if(!file.type.startsWith('image/')){alert('Choose an image file.');input.value='';return}if(file.size>10*1024*1024){alert('Choose an image smaller than 10 MB.');input.value='';return}try{const image=await resizeProfileImage(file);const previous=data.profile.image;data.profile.image=image;try{saveData()}catch(error){data.profile.image=previous;throw error}renderEditor()}catch(error){alert(`Could not save the profile photo: ${error.message}`)}finally{input.value=''}}
-function resizeProfileImage(file){return new Promise((resolve,reject)=>{const url=URL.createObjectURL(file),image=new Image();image.onload=()=>{URL.revokeObjectURL(url);try{const scale=Math.min(1,512/Math.max(image.naturalWidth,image.naturalHeight)),canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(image.naturalWidth*scale));canvas.height=Math.max(1,Math.round(image.naturalHeight*scale));const context=canvas.getContext('2d');if(!context){reject(Error('Your browser could not process this image.'));return}context.fillStyle='#fff';context.fillRect(0,0,canvas.width,canvas.height);context.drawImage(image,0,0,canvas.width,canvas.height);resolve(canvas.toDataURL('image/jpeg',0.82))}catch(error){reject(Error('Your browser could not process this image.'))}};image.onerror=()=>{URL.revokeObjectURL(url);reject(Error('The selected file is not a supported image.'))};image.src=url})}
-function removeProfileImage(){const previous=data.profile.image;delete data.profile.image;try{saveData();renderEditor()}catch(error){data.profile.image=previous;alert(`Could not remove the profile photo: ${error.message}`)}}
-function deleteItem(i){if(!confirm('Delete this item? This cannot be undone unless you have a backup.'))return;data[currentType].splice(i,1);saveData();renderEditor()}
-function exportData(){const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='portfolio-backup.json';a.click();URL.revokeObjectURL(a.href)}
-function importDataPrompt(){const raw=prompt('Paste the contents of a portfolio-backup.json file:');if(!raw)return;try{const parsed=JSON.parse(raw);if(!parsed.profile||!Array.isArray(parsed.achievements))throw Error();data=parsed;saveData();renderEditor();alert('Backup imported.')}catch(e){alert('Invalid backup JSON. No changes were made.')}}
-function resetData(){if(!confirm('Reset all portfolio content to the sample data?'))return;data=JSON.parse(JSON.stringify(defaults));saveData();renderEditor()}
-renderSite();
-</script>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="header">
+    <div class="wrap nav">
+      <!-- <a class="brand" href="#home" aria-label="Portfolio home">FULLSTACK<span>.DEV</span></a> -->
+      <nav class="links" aria-label="Main navigation">
+        <a href="#about">About</a><a href="#achievements">Achievements</a><a href="#projects">Projects</a>
+        <a href="#skills">Skills</a><a href="#experience">Experience</a><a class="contact-nav" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="kicker">Full Stack Application &amp; Web Developer</span>
+          <h1>Thoughtful code.<br><span>Useful products.</span></h1>
+          <p class="hero-copy">I build and support web and .NET applications from the database to the user interface—turning real needs into clear, dependable digital experiences.</p>
+          <div class="actions">
+            <a class="button" href="#projects">Explore my work
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="button alt" href="#contact">Get in touch</a>
+          </div>
+        </div>
+        <aside class="identity" aria-label="Developer profile">
+          <div class="initials" aria-hidden="true">J.U.</div>
+          <h2>Jose Umbao Jr.</h2>
+          <p class="role">Full Stack Application &amp; Web Developer</p>
+          <dl class="details">
+            <div><dt>Based in</dt><dd>Philippines</dd></div>
+            <div><dt>Focus</dt><dd>Web and .Net applications</dd></div>
+            <div><dt>Approach</dt><dd>Build · improve · support</dd></div>
+          </dl>
+          <span class="available">Open to meaningful opportunities</span>
+        </aside>
+      </div>
+    </section>
+    <section class="section" id="about">
+      <div class="wrap">
+        <div class="section-head"><div><span class="kicker">A little about me</span><h2>From problem to polished product.</h2>
+        <!-- </div><p>Full-stack thinking with a focus on practical, maintainable solutions.</p></div> -->
+        <div class="about-grid">
+          <div class="panel about-copy">
+            <p>I’m a developer who enjoys bringing ideas to life across the full application stack. My toolkit includes <strong>PHP, Laravel, Vue.js, JavaScript, C#, and SQL</strong>, with experience spanning web application development, database work, system integration, and technical troubleshooting.</p>
+            <p>I care about the details behind a good product: understandable code, thoughtful interfaces, reliable data, and smooth collaboration. I keep learning, share progress clearly, and look for ways to make software work better for the people who use it.</p>
+          </div>
+          <div class="panel">
+            <ul class="focus">
+              <li><span class="focus-icon" aria-hidden="true">01</span><span><strong>End-to-end development</strong><span>Connect user interfaces, application logic, and data.</span></span></li>
+              <li><span class="focus-icon" aria-hidden="true">02</span><span><strong>Problem solving</strong><span>Investigate issues and build practical improvements.</span></span></li>
+              <li><span class="focus-icon" aria-hidden="true">03</span><span><strong>Continuous growth</strong><span>Learn new tools and strengthen engineering practice.</span></span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="achievements">
+      <div class="wrap">
+        <div class="section-head"><div><span class="kicker">What I bring</span><h2>Achievement highlights</h2>
+        <!-- </div><p>A snapshot of the contributions and strengths I bring to application development.</p></div> -->
+        <div class="achievement-grid">
+          <article class="achievement"><div class="card-top"><span class="symbol" aria-hidden="true">&lt;/&gt;</span><span class="label">Full stack</span></div><h3>Build across the stack</h3><p>Bring front-end experiences, back-end application logic, and relational data together in cohesive web solutions.</p></article>
+          <article class="achievement"><div class="card-top"><span class="symbol" aria-hidden="true">↗</span><span class="label">Improvement</span></div><h3>Make workflows more useful</h3><p>Translate user and business needs into focused features that make everyday application tasks clearer and easier.</p></article>
+          <article class="achievement"><div class="card-top"><span class="symbol" aria-hidden="true">✓</span><span class="label">Reliability</span></div><h3>Support dependable software</h3><p>Approach troubleshooting, integration, and maintenance with care for application quality and the user experience.</p></article>
+        </div>
+        <!-- <p class="note">Add specific project outcomes, dates, and measurable results here when they are available and verified.</p> -->
+      </div>
+    </section>
+    <section class="section" id="projects">
+      <div class="wrap">
+        <div class="section-head"><div><span class="kicker">Selected work</span><h2>Projects &amp; case studies</h2>
+        <!-- </div><p>Representative project concepts to replace with links and details from your own work.</p></div> -->
+        <div class="project-grid">
+          <article class="project"><div class="card-top"><span class="symbol" aria-hidden="true">▦</span><span class="label">Web application</span></div><h3>Business Operations Portal</h3><p>A concept for a centralized workspace where teams can manage records, submit requests, and follow day-to-day processes.</p><div class="project-bottom"><ul class="chips" aria-label="Example technologies"><li>Laravel</li><li>Vue.js</li><li>SQL</li></ul></div></article>
+          <article class="project"><div class="card-top"><span class="symbol" aria-hidden="true">◫</span><span class="label">Data &amp; reporting</span></div><h3>Operational Insights Dashboard</h3><p>A dashboard concept that organizes important records into a readable view to help users understand their work at a glance.</p><div class="project-bottom"><ul class="chips" aria-label="Example technologies"><li>PHP</li><li>JavaScript</li><li>MySQL</li></ul></div></article>
+          <article class="project"><div class="card-top"><span class="symbol" aria-hidden="true">✳</span><span class="label">Personal project</span></div><h3>Portfolio Content Manager</h3><p>A responsive portfolio concept with an editor for managing profile information, projects, skills, and achievement highlights.</p><div class="project-bottom"><ul class="chips" aria-label="Example technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul></div></article>
+        </div>
+        <!-- <p class="note">Project titles and descriptions above are starter examples, not claims of completed client work. Replace them with your own case studies.</p> -->
+      </div>
+    </section>
+    <section class="section" id="skills">
+      <div class="wrap">
+        <div class="section-head"><div><span class="kicker">Tools of the trade</span><h2>Technical toolkit</h2>
+        <!-- </div><p>Technologies and practices for developing, connecting, and supporting applications.</p></div> -->
+        <div class="skills">
+          <article class="skill"><h3>Front end</h3><p>JavaScript · Vue.js · HTML · CSS · Responsive UI</p></article>
+          <article class="skill"><h3>Back end</h3><p>PHP · Laravel · C# · REST APIs</p></article>
+          <article class="skill"><h3>Data</h3><p>SQL · MySQL · MongoDB · Database design · Data workflows</p></article>
+          <article class="skill"><h3>Engineering</h3><p>Git · Debugging · Integration · Application support</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="experience">
+      <div class="wrap">
+        <div class="section-head"><div><span class="kicker">Professional journey</span><h2>Experience</h2></div></div>
+        <article class="experience">
+            <div class="experience-date">February 2021 - Present</div>
+            <div>
+                <h3>Application Developer Associate</h3>
+                <p class="company">Philippine Foremost Milling Corporation</p>
+                <h4 class="responsibility-heading">Responsibilities &amp; impact</h4>
+                <ul class="responsibilities">
+                  <li><strong>Application development &amp; maintenance</strong><span>Develop, enhance, test, and maintain business applications based on user and business requirements.</span></li>
+                  <li><strong>System support &amp; troubleshooting</strong><span>Investigate application errors, resolve technical issues, and provide timely support to end users.</span></li>
+                  <li><strong>Web application development</strong><span>Develop and maintain web applications using PHP, Laravel, Vue.js, JavaScript, HTML, and CSS.</span></li>
+                  <li><strong>Database management</strong><span>Create and maintain queries, optimize data retrieval, and ensure data accuracy and integrity using MySQL or SQL Server.</span></li>
+                  <li><strong>System integration</strong><span>Develop and maintain integrations between applications, databases, APIs, and industrial systems for efficient data exchange.</span></li>
+                  <li><strong>Application testing</strong><span>Perform functional testing, debugging, and validation to ensure applications meet business requirements and quality standards.</span></li>
+                  <li><strong>Continuous improvement</strong><span>Identify opportunities to improve application functionality, performance, usability, and reliability.</span></li>
+                  <li><strong>User &amp; technical support</strong><span>Coordinate with users and relevant teams to investigate concerns, provide solutions, and communicate progress.</span></li>
+                  <li><strong>Technical documentation</strong><span>Prepare and maintain system procedures, user guides, technical documentation, and application change records.</span></li>
+                  <li><strong>Deployment &amp; version control</strong><span>Assist with application deployment, release management, and source code maintenance using Git and GitHub.</span></li>
+                  <li><strong>Data security &amp; compliance</strong><span>Follow company IT policies, implement appropriate access controls, and help protect application data and system resources.</span></li>
+                  <li><strong>Team collaboration</strong><span>Work with IT colleagues, business users, and other departments to deliver solutions aligned with operational requirements.</span></li>
+                </ul>
+            </div>
+        </article>
+        <article class="experience">
+            <div class="experience-date">June 2019 - January 2021</div>
+            <div>
+                <h3>PLC App Dev I</h3>
+                <p class="company">Philippine Foremost Milling Corporation</p>
+                <h4 class="responsibility-heading">Responsibilities &amp; impact</h4>
+                <ul class="responsibilities">
+                    <li><strong>Application development &amp; maintenance</strong><span>Perform application testing, deployment, maintenance, and continuous system enhancements.</span></li>
+                    <li><strong>PLC integration</strong><span>Develop and maintain C#/.NET applications integrated with PLC-controlled industrial equipment.</span></li>
+                    <li><strong>Communication protocols</strong><span>Implement PLC communication interfaces using industrial protocols such as Modbus TCP/IP and OPC UA.</span></li>
+                    <li><strong>Real-time monitoring</strong><span>Develop real-time machine monitoring, production data collection, and reporting functionalities.</span></li>
+                    <li><strong>System integration</strong><span>Integrate industrial applications with databases and other manufacturing systems.</span></li>
+                    <li><strong>Troubleshooting</strong><span>Troubleshoot PLC communication issues, application errors, and data inconsistencies.</span></li>
+                    <li><strong>Technical documentation</strong><span>Prepare technical documentation and provide application support to production and engineering teams.</span></li>
+                    <li><strong>Collaboration</strong><span>Collaborate with automation, engineering, and IT teams to improve system reliability and operational efficiency.</span></li>
+                </ul>
+            </div>
+        </article>
+        <!-- <p class="note">Update this entry with accurate role titles, organizations, dates, and responsibilities.</p> -->
+      </div>
+    </section>
+    <section class="section" id="contact">
+      <div class="wrap">
+        <div class="contact-panel">
+          <div><span class="kicker">Have a project in mind?</span><h2>Let’s build something useful.</h2><p>I’m interested in thoughtful application and web development work. Reach out to discuss a role, collaboration, or project.</p></div>
+          <div class="contact-links" aria-label="Contact links">
+            <a href="mailto:joseumbao123@gmail.com">joseumbao123@gmail.com ↗</a>
+            <a href="https://www.linkedin.com/in/jose-umbao/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/jose-umbao/ ↗</a>
+            <a href="https://github.com/MRHELL3195" target="_blank" rel="noopener noreferrer">https://github.com/MRHELL3195 ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-inner"><span>© <span id="year"></span> Jose Umbao Jr. Built with care.</span><a href="#home">Back to top ↑</a></div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
