@@ -18,6 +18,7 @@ No build step or server is required for this prototype.
 
 ## Admin panel features
 - Edit profile, professional title, location, summary, biography, email, LinkedIn URL, and GitHub URL.
+- Upload or remove a profile photo; images are resized and saved in the browser with the rest of the profile.
 - Create, edit, and delete achievements.
 - Create, edit, and delete projects and list technologies used.
 - Create, edit, and delete skills.
@@ -27,6 +28,8 @@ No build step or server is required for this prototype.
 
 ## Data storage and security limitations
 This is a **front-end prototype**, not a production-secure application. Content is stored in the browser's `localStorage`, so it is specific to the browser/device and can be cleared by browser settings. The demo login credentials are visible in the source code and must not be used to protect real data. There is no server-side database, user management, access control, or server validation.
+
+Profile photos are resized to fit within 512 × 512 pixels and stored in `localStorage` as part of the profile. JSON backups include the photo, so backups can be larger when a photo is present.
 
 For production, implement a backend such as Laravel with a MySQL database, hashed passwords, authenticated admin routes, authorization middleware, CSRF protection, server-side validation, rate limiting, secure sessions, backups, and deployment over HTTPS. Do not publish confidential employer information, credentials, internal screenshots, or sensitive company data.
 
